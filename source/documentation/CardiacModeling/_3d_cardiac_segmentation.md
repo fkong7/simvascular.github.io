@@ -1,0 +1,69 @@
+# Automatic Machine Learning Cardiac Segmentation
+
+## Introduction 
+
+The SimVascular **Automatic Cardiac Segmentation Tool** uses pre-trained deep neural network models to automaticall generate segmentations for major cardiac structures, the four heart chambers, aorta and pulmonary arteries. The automatic cardiac segmentation tool utilized an ensemble of two-dimensional (2D) convolutional neural networks (CNNs) for automatic segmentation of cardiac structures from three-dimensional (3D) patient images and demonstrated state-of-the-art performance than prior approaches when evaluated on a benchmark dataset containing both magnetic resonance (MR) and computed tomogra- phy(CT) cardiac scans. This tool can be used from both the SimVascular's Python plugin in the GUI or from the command line version of the SimVascular Python. Detailed description about this tool can be found in the following paper:
+
+Kong, F., and Shadden, S. C. (August 7, 2020). "Automating Model Generation for Imagebased Cardiac Flow Simulation." ASME. J Biomech Eng. doi: https://doi.org/10.1115/1.4048032
+
+## Input Requirements
+The preferred input format of the image volumes is **.nii.gz or .nii or .vti**. VTK image volumes (.vti) should be reoriented to have an orientation matrix of identity. This is because the segmnetation method requires identity-oriented image volumes while the version of VTK within SimVascular does not include orientation matrix with VTI images.
+The directory containing the input image data should be organized as follows:
+
+```
+image_dir
+     |__ patient_id (optional)
+         |__ image_volume0.vti
+         |__ image_volume1.vti
+         |__ image_volume2.vti
+         |__ ...
+```
+## Download  Pre-Trained Models
+We used the image and ground truth data provided by [MMWHS](https://zmiclab.github.io/projects/mmwhs/) to train our models. 
+Our segmentation models were trainined simultaneously on CT and MR data and trained weights are [here](https://drive.google.com/open?id=162Xr5OezSZL-0K3aoYO7WnHWuGTEXkkj). 
+
+## Predict Segmentations From Image Data
+
+### Prediction Using SimVascular Python Shell
+
+To generate segmentations for 3D CT or MR image volumes, we can use SimVascular's Python Shell to run the prediction script. The SimVascular Python Shell can be invoked from the terminal according to the following instruction: http://simvascular.github.io/docsPythonInterface.html#python_shell. The prediction script `prediction.py` can be found here in SimVascular's source code: Python/site-packages/sv_auto_lv_modeling/segmentation/prediction.py
+
+```
+patient_id=WS01 
+image_dir=01-Images
+output_dir=02-Segmnts
+weight_dir=./Weights 
+
+sv_python_dir=/usr/local/bin # Replace with the path to your SimVascular installation.
+
+python segmentation/prediction.py \
+    --pid patient_id \ # Patient ID.
+    --image image_dir \ # the images should be saved in proper format in a folder named as patient_id within image_dir. 
+    --output output_dir \
+    --model weight_dir \
+    --view 0 1 2 \ # Use models trained on axial (0), coronal (1) and/or sagittal (2) view[s].
+    --modality ct # Image modality, ct or mr.
+```
+A shell script (`Python/site-packages/sv_auto_lv_modeling/segmentation.sh`) is provided for ease of use. 
+
+### Prediction Using SimVascular Python Console
+
+We can also use the Python console in SimVascular GUI to run the prediction script. Within the Python plugin, we can use the **Text Editor** mode and enter the following lines to create a Python script. 
+
+```Python
+from auto_lv.auto_lv import Segmentation
+seg = Segmentation()
+seg.set_modality('ct')
+seg.set_patient_id ('WS01')
+seg.set_image_directory ('01-Images')
+seg.set_output_directory ('02-Segmnts')
+seg.set_model_directory (['Weights'])
+seg.set_view ([0,1,2])
+seg.generate_segmentation()
+```
+
+## Visualize Segmentation Results
+
+We can use either SimVascular or Paraview (for .vti files) to visualize the segmentation results. In SimVascular, we can right-click **Images** and chose **Add/Replace Image** to visualize the image and the segmentation data. The following two pictures show an example of CT image and the segmentaion results. 
+![images](imgs/images.png)
+![segmentation](imgs/segmentation.png)
