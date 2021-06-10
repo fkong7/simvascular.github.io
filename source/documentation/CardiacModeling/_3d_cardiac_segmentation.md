@@ -20,7 +20,7 @@ image_dir
 ```
 ## Download  Pre-Trained Models
 We used the image and ground truth data provided by [MMWHS](https://zmiclab.github.io/projects/mmwhs/) to train our models. 
-Our segmentation models were trainined simultaneously on CT and MR data and trained weights are [here](https://drive.google.com/open?id=162Xr5OezSZL-0K3aoYO7WnHWuGTEXkkj). 
+Our segmentation models were trained simultaneously on CT and MR data and trained weights are [here](https://drive.google.com/open?id=162Xr5OezSZL-0K3aoYO7WnHWuGTEXkkj). 
 
 ## Predict Segmentations From Image Data
 
