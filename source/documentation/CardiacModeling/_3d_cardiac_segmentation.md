@@ -28,21 +28,22 @@ Our segmentation models were trainined simultaneously on CT and MR data and trai
 
 To generate segmentations for 3D CT or MR image volumes, we can use SimVascular's Python Shell to run the prediction script. The SimVascular Python Shell can be invoked from the terminal according to the following instruction: http://simvascular.github.io/docsPythonInterface.html#python_shell. The prediction script `prediction.py` can be found here in SimVascular's source code: Python/site-packages/sv_auto_lv_modeling/segmentation/prediction.py
 
-```
+```bash
 patient_id=WS01 
 image_dir=01-Images
 output_dir=02-Segmnts
 weight_dir=./Weights 
+segmentation_script=segmentation/prediction.py
 
 sv_python_dir=/usr/local/bin # Replace with the path to your SimVascular installation.
-
-python segmentation/prediction.py \
-    --pid patient_id \ # Patient ID.
-    --image image_dir \ # the images should be saved in proper format in a folder named as patient_id within image_dir. 
-    --output output_dir \
-    --model weight_dir \
-    --view 0 1 2 \ # Use models trained on axial (0), coronal (1) and/or sagittal (2) view[s].
-    --modality ct # Image modality, ct or mr.
+${sv_python_dir}/simvascular --python \
+        -- ${segmentation_script} \
+        --pid patient_id \ # Patient ID.
+        --image image_dir \ # the images should be saved in proper format in a folder named as patient_id within image_dir. 
+        --output output_dir \
+        --model weight_dir \
+        --view 0 1 2 \ # Use models trained on axial (0), coronal (1) and/or sagittal (2) view[s].
+        --modality ct # Image modality, ct or mr.
 ```
 A shell script (`Python/site-packages/sv_auto_lv_modeling/segmentation.sh`) is provided for ease of use. 
 
