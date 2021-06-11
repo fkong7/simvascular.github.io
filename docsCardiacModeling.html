@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SimVascular Docs</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <link href="css/shop-item.css" rel="stylesheet" type="text/css" />
+
+    <link href="css/codestyle.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars" id="barIcon"></i>
+              </button>
+                <a class="navbar-brand" id="brandName" href="index.html">
+                  <img src="img/svlogo/svLogoSmallText.png" alt="...">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+
+                  <!-- USER GUIDES -->
+                  <li>
+                    <a href="#" id="dropdownMenu1" data-toggle="dropdown">
+                      <b><span class="fa fa-user"></span> User Guides</b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="docsInstallation.html"><b><span class="fa fa-sign-in fa-rotate-90"></span> Installation</b></a></li>
+                      <li role="presentation" class="divider"></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="docsQuickGuide.html"><b><span class="icon ion-ios7-bolt"></span> Quick Guide</b></a></li>
+                      <li role="presentation" class="divider"></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="docsModelGuide.html"><b><span class="icon ion-settings"></span> Modeling</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="docsMeshing.html"><b><span class="icon ion-ios7-keypad"></span> Meshing</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="docsFlowSolver.html"><b><span class="icon ion-play"></span> Simulation</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="docssvFSI.html"><b><span class="icon ion-plus-round"></span> svFSI</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="docs1DSimulation.html"><b><span class="icon ion-plus-round"></span> 1D Simulation</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="docsGenBC.html"><b><span class="icon ion-refresh"></span> GenBC</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="docsPythonInterface.html"><b><span class="icon ion-refresh"></span> Python Interface</b></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- CLINCAL CASES -->
+                  <li>
+                    <a href="#" id="dropdownMenu1" data-toggle="dropdown">
+                      <b><i class="fa fa-stethoscope"></i> Clinical Cases</b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="clinicalCase3.html"><b><span class="fa fa-user-md"></span> Coronary Normal</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="clinicalCase1.html"><b><span class="fa fa-user-md"></span> Aortofemoral Normal - 1</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="clinicalCase2.html"><b><span class="fa fa-user-md"></span> Aortofemoral Normal - 2</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="clinicalCase4.html"><b><span class="fa fa-user-md"></span> Healthy Pulmonary</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://simtk.org/projects/sv_tests"><b><span class="fa fa-user-md"></span> All demo projects</b></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- DEVELOPER GUIDES -->
+                  <li>
+                    <a href="#" id="dropdownMenu1" data-toggle="dropdown">
+                      <b><span class="fa fa-caret-square-o-right"></span> Developer Guides</b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="docsCompile.html"><b><span class="fa fa-file-text-o"></span> Compile Source Code</b></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- svCOMMUNITY -->
+                  <li>
+                    <a href="#" id="dropdownMenu1" data-toggle="dropdown">
+                      <b><i class="fa fa-users"></i> svCommunity</b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://simtk.org/forums/viewforum.php?f=188"><b><span class="fa fa-users"></span> Public Forum</b></a></li>
+                      <li role="presentation" class="divider"></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://simtk.org/mailman/listinfo/simvascular-news"><b><span class="fa fa-sign-in"></span> Join News Mailing List</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://simtk.org/pipermail/simvascular-news/"><b><span class="fa fa-pencil-square-o"></span> News Mailing List Archive</b></a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://github.com/SimVascular/SimVascular/issues"><b><span class="fa fa-bug"></span> Report bugs and request features</b></a></li>
+                    </ul>
+                  </li>
+
+                  <!-- REFERENCES -->
+                  <li>
+                    <a href="docsRefs.html" id="dropdownMenu1" >
+                      <b><span class="icon ion-document-text"></span>References</b>
+                    </a>
+                  </li>
+
+                  <!-- Archives -->
+                  <li>
+                    <a href="#" id="dropdownMenu1" data-toggle="dropdown">
+                      <b> Archives</b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="archiveQuickGuideSV2.html"><b>SimVascular 2.0</b></a></li>
+                    </ul>
+                  </li>
+
+                    <!-- <li><a href="docsQuickGuide.html" id="btnQuickGuide"><b><span class="icon ion-ios7-bolt"></span> Quick Guide</b></a></li>
+                    <li><a href="docsModelGuide.html" id="btnModelGuide"><b><span class="icon ion-settings"></span> Modeling</b></a></li>
+
+                    <li><a href="docsMeshing.html" id="btnMeshing"><b><span class="icon ion-ios7-keypad"></span> Meshing</b></a></li>
+                    <li><a href="docsPresolver.html" id="btnPresolver"><b><span class="icon ion-log-in"></span> svPre</b></a></li>
+                    <li><a href="docsFlowSolver.html" id="btnFlowSolver"><b><span class="icon ion-play"></span> svSolver</b></a></li>
+                    <li><a href="docsRefs.html" id="btnRefs"><b><span class="icon ion-document-text"></span> References</b></a></li>
+                    <li><a href="clinicalCase1.html" id="btnRefs"><b>Case Studies</b></a></li> -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <!--Nav Bar -->
+<div class="row">
+    <div class="col-xs-1 col-sm-1 hidden-md hidden-lg">
+    </div>
+    <!-- ONE COLUMN OF SPACE -->
+    <nav class="hidden-xs hidden-sm col-md-2 col-lg-2 bs-docs-sidebar">
+
+        <ul id="sidebar" class="nav nav-stacked fixed manInstallation"> <!--Nav Bar -->
+<p><h3>CardiacModeling</h3></p>
+<li><a href="#automatic-machine-learning-cardiac-segmentation">Machine Learning Cardiac Segmentation</a>
+  <ul class="nav nav-stacked">
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#input-requirements">Input Requirements</a></li>
+    <li><a href="#download--pre-trained-models">Download Pre-Trained Models</a></li>
+    <li><a href="#predict-segmentations-from-image-data">Predict Segmentations From Image Data</a></li>
+    <li><a href="#visualize-segmentation-results">Visualize Segmentation Results</a></li>
+  </ul>
+</li>
+<li><a href="#automatic-lv-mesh-generation-for-cardiac-flow-simulations-in-svfsi">Automatic Mesh Generation</a>
+  <ul class="nav nav-stacked">
+    <li><a href="#introduction-surf">Introduction</a></li>
+    <li><a href="#construct-lv-surface-meshes-with-tagged-boundary-faces">Construct LV Surface Meshes</a></li>
+    <li><a href="#volumetric-meshing-using-simvascular">Volumetric Meshing using SimVascular</a></li>
+    <li><a href="#construct-point-corresponded-lv-meshes-from-4d-images">Mesh Registration</a></li>
+    <li><a href="#compute-mesh-motion-from-registered-meshes">Compute Mesh Motion</a></li>
+  </ul>
+</li>
+
+</ul>
+    </nav>
+
+    <!--Main Content -->
+    <div class="col-xs-10 col-sm-10 col-md-9 col-lg-9" id="manualContent">
+
+      <!-- ACTUAL CONTENT -->
+
+        <div class="manInstallation">
+<section id="automatic-machine-learning-cardiac-segmentation" class="group"><h1>Automatic Machine Learning Cardiac Segmentation</h1>
+
+<h2 id='introduction'>Introduction </h2>
+<p>The SimVascular <strong>Automatic Cardiac Segmentation Tool</strong> uses pre-trained deep neural network models to automaticall generate segmentations for major cardiac structures, the four heart chambers, aorta and pulmonary arteries. The automatic cardiac segmentation tool utilized an ensemble of two-dimensional (2D) convolutional neural networks (CNNs) for automatic segmentation of cardiac structures from three-dimensional (3D) patient images and demonstrated state-of-the-art performance than prior approaches when evaluated on a benchmark dataset containing both magnetic resonance (MR) and computed tomogra- phy(CT) cardiac scans. This tool can be used from both the SimVascular&#39;s Python plugin in the GUI or from the command line version of the SimVascular Python. Detailed description about this tool can be found in the following paper:</p>
+<p>Kong, F., and Shadden, S. C. (August 7, 2020). &quot;Automating Model Generation for Imagebased Cardiac Flow Simulation.&quot; ASME. J Biomech Eng. doi: <a href='https://doi.org/10.1115/1.4048032' target='_blank' class='url'>https://doi.org/10.1115/1.4048032</a></p>
+<h2 id='input-requirements'>Input Requirements</h2>
+<p>The preferred input format of the image volumes is <strong>.nii.gz or .nii or .vti</strong>. VTK image volumes (.vti) should be reoriented to have an orientation matrix of identity. This is because the segmnetation method requires identity-oriented image volumes while the version of VTK within SimVascular does not include orientation matrix with VTI images.
+The directory containing the input image data should be organized as follows:</p>
+<pre><code>image_dir
+     |__ patient_id (optional)
+         |__ image_volume0.vti
+         |__ image_volume1.vti
+         |__ image_volume2.vti
+         |__ ...
+</code></pre>
+<h2 id='download--pre-trained-models'>Download  Pre-Trained Models</h2>
+<p>We used the image and ground truth data provided by <a href='https://zmiclab.github.io/projects/mmwhs/'>MMWHS</a> to train our models. 
+Our segmentation models were trained simultaneously on CT and MR data and trained weights are <a href='https://drive.google.com/open?id=162Xr5OezSZL-0K3aoYO7WnHWuGTEXkkj'>here</a>. </p>
+<h2 id='predict-segmentations-from-image-data'>Predict Segmentations From Image Data</h2>
+<h3 id='prediction-using-simvascular-python-shell'>Prediction Using SimVascular Python Shell</h3>
+<p>To generate segmentations for 3D CT or MR image volumes, we can use SimVascular&#39;s Python Shell to run the prediction script. The SimVascular Python Shell can be invoked from the terminal according to the following instruction: <a href='http://simvascular.github.io/docsPythonInterface.html#python_shell' target='_blank' class='url'>http://simvascular.github.io/docsPythonInterface.html#python_shell</a>. The prediction script <code>prediction.py</code> can be found here in SimVascular&#39;s source code: Python/site-packages/sv_auto_lv_modeling/segmentation/prediction.py</p>
+<pre><code class='language-shell' lang='shell'>data_path=/path/to/data
+sv_python_dir=/usr/local/bin
+script_dir=SimVascular/Python/site-packages/sv_auto_lv_modeling
+
+patient_id=WS01
+image_dir=$data_path/01-Images
+output_dir=$data_path/02-Segmnts
+weight_dir=$data_path/Weights
+
+${sv_python_dir}/simvascular --python -- $script_dir/segmentation/prediction.py \
+    --pid $patient_id \
+    --image $image_dir \
+    --output $output_dir \
+    --model $weight_dir \
+    --view  0 1 2 \ # 0 for axial, 1 for coronal, 2 for sagital
+    --modality ct # ct or mr
+</code></pre>
+<p>A shell script (<code>Python/site-packages/sv_auto_lv_modeling/segmentation.sh</code>) is provided for ease of use. </p>
+<h3 id='prediction-using-simvascular-python-console'>Prediction Using SimVascular Python Console</h3>
+<p>We can also use the Python console in SimVascular GUI to run the prediction script. Within the Python plugin, we can use the <strong>Text Editor</strong> mode and enter the following lines to create a Python script. </p>
+<pre><code class='language-python' lang='python'>from auto_lv.auto_lv import Segmentation
+data_path='/path/to/data'
+seg = Segmentation()
+seg.set_modality('ct')
+seg.set_patient_id ('WS01')
+seg.set_image_directory (data_path+'/01-Images')
+seg.set_output_directory (data_path+'/02-Segmnts')
+seg.set_model_directory ([data_path+'/Weights'])
+seg.set_view ([2])
+seg.generate_segmentation()
+</code></pre>
+<h2 id='visualize-segmentation-results'>Visualize Segmentation Results</h2>
+<p>We can use either SimVascular or Paraview (for .vti files) to visualize the segmentation results. In SimVascular, we can right-click <strong>Images</strong> and chose <strong>Add/Replace Image</strong> to visualize the image and the segmentation data. The following two pictures show an example of CT image and the segmentaion results. 
+<figure>
+  <img class="svImg svImgMd" src="source/documentation/cardiacmodeling/imgs/images.png">
+  <figcaption class="svCaption" >Example CT image data.</figcaption>
+</figure>
+
+<figure>
+  <img class="svImg svImgMd" src="source/documentation/cardiacmodeling/imgs/segmentation.png">
+  <figcaption class="svCaption" >Segmentation results of the CT image data.</figcaption>
+</figure>
+
+</section>
+
+<section id='automatic-lv-mesh-generation-for-cardiac-flow-simulations-in-svfsi'><h1>Automatic LV Mesh Generation For Cardiac Flow Simulations in svFSI</h1>
+<h2 id='introduction-surf'>Introduction</h2>
+<p>One application of the <strong>SimVascular Automatic Cardiac Segmentation</strong> tool is to generate left venticle (LV) meshes from the segmentation results. We can use these meshes to perform computational fluid dynamics (CFD) modeling of LV flow combined with patient medical imaging data.  A typical LV model construction pipeline usually starts with segmentation of the LV by manual delineation followed by mesh generation and registration techniques using separate software tools. In SimVascular, we have included an <strong>Automatic LV Mesh Generation</strong> tool to automate each of these steps to generate simulation-ready meshes with no or few human efforts. </p>
+<p>The  <strong>Automatic LV Mesh Generation</strong> tool takes in the generated segmentation and output reconstructed LV surface meshes for CFD simulations. Besides we also provide Python scripts for registering the surface meshes to compute wall motion using <a href='https://simpleelastix.github.io/'>SimpleElastix</a>. These registered surface meshes can also be interpolated to obtain sufficient temporal resolution.</p>
+<h2 id='construct-lv-surface-meshes-with-tagged-boundary-faces'>Construct LV Surface Meshes with Tagged Boundary Faces</h2>
+<h3 id='using-simvascular-python-shell-1'>Using SimVascular Python Shell</h3>
+<ul>
+<li><p>Similarly, we can use SimVascular&#39;s Python Shell to run the prediction script. The SimVascular Python Shell can be invoked from the terminal according to the following instruction: <a href='http://simvascular.github.io/docsPythonInterface.html#python_shell' target='_blank' class='url'>http://simvascular.github.io/docsPythonInterface.html#python_shell</a>. The surface generation script <code>surface_main.py</code> can be found here in SimVascular&#39;s source code: Python/site-packages/sv_auto_lv_modeling/modeling/surface_main.py</p>
+<pre><code class='language-shell' lang='shell'># Path to SimVascular exectuable
+data_path=/path/to/data
+sv_python_dir=/usr/local/bin
+script_dir=SimVascular/Python/site-packages/sv_auto_lv_modeling
+
+# Path to the segmentation results
+p_id=WS01
+input_dir=$data_path/02-Segmnts/$p_id
+# Path to the outputed surface meshes
+output_dir=$data_path/03-Surfaces/$p_id
+
+model_script=$script_dir/modeling/surface_main.py
+# Construct LV surface meshes with tagged boundary faces
+${sv_python_dir}/simvascular --python \
+        -- ${model_script} \
+        --input_dir ${input_dir} \
+        --output_dir ${output_dir} \
+        --edge_size 3.5 # maximum edge size for the mesh
+</code></pre>
+</li>
+
+</ul>
+<h3 id='using-simvascular-python-console-1'>Using SimVascular Python Console</h3>
+<ul>
+<li><p>We can also use the Python console in SimVascular GUI to run the prediction script. Within the Python plugin, we can use the <strong>Text Editor</strong> mode and enter the following lines to create a Python script. </p>
+<pre><code class='language-python' lang='python'>from auto_lv.auto_lv import Modeling 
+data_path='/path/to/data'
+surf = Modeling()
+surf.set_segmentation_directory(data_path+'/02-Segmnts/WS01')
+surf.set_output_directory (data_path+'/03-Surfaces/WS01')
+surf.set_max_edge_size (3.5)
+surf.generate_lv_modes ()
+</code></pre>
+</li>
+
+</ul>
+<figure>
+  <img class="svImg svImgMd" src="source/documentation/cardiacmodeling/imgs/surface.png">
+  <figcaption class="svCaption" >Automatically created LV meshes at diastole and systole.</figcaption>
+</figure>
+
+<h2 id='volumetric-meshing-using-simvascular'>Volumetric Meshing using SimVascular </h2>
+<h3 id='using-simvascular-python-shell-2'>Using SimVascular Python Shell</h3>
+<p>The volumetric meshing script <code>volume_mesh_main.py</code> can be found here in SimVascular&#39;s source code: Python/site-packages/sv_auto_lv_modeling/modeling/volume_mesh_main.py</p>
+<pre><code class='language-shell' lang='shell'># Path to SimVascular exectuable
+data_path=/path/to/data
+sv_python_dir=/usr/local/bin
+script_dir=SimVascular/Python/site-packages/sv_auto_lv_modeling
+
+p_id=WS01
+# Path to the surface meshes
+input_dir=$data_path/04-SurfReg/$p_id
+# Path to the outputed volume meshes
+output_dir=$data_path/05-VolMesh/$p_id
+volume_mesh_script=$script_dir/modeling/volume_mesh_main.py
+
+# Volumetric Meshing using SimVascular
+${sv_python_dir}/simvascular --python \
+    -- ${volume_mesh_script} \
+    --input_dir $input_dir \
+    --output_dir $output_dir \
+    --phase 0 \ # the phase id in $input_dir to generate a volumetric mesh
+    --edge_size 3.5
+</code></pre>
+<h3 id='using-simvascular-python-console-2'>Using SimVascular Python Console</h3>
+<p>Within the Python plugin, we can use the <strong>Text Editor</strong> mode and enter the following lines to create a Python script. </p>
+<pre><code class='language-python' lang='python'>from auto_lv.auto_lv import VolumeMesh 
+data_path='/path/to/data'
+vol = VolumeMesh()
+vol.set_output_directory (data_path+'/05-VolMesh/WS01')
+vol.set_max_edge_size (3.5)
+vol.set_surface_model_filename (data_path+'/04-SurfReg/WS01/WS01_0.vti.vtp')
+vol.generate_volume_mesh()
+</code></pre>
+
+<h2 id='construct-point-corresponded-lv-meshes-from-4d-images'>Construct Point Corresponded LV Meshes from 4D Images</h2>
+<p>We can simulate the LV flow over time by tracking the deformation of the heart from time-resolved imaging and imposes this motion to the fluidic domains inside the heart, which leads to a deforming-domain CFD problem. To be able to track the deformation of the generated LV mesh over time, we need to building point-corresponded LV meshes from segmentations at all time frames. We generate a surface mesh at one time frame and propagated to the others using the displacement field obtained from registering the corresponding segmentations.</p>
+<p>We will need <a href='https://github.com/SuperElastix/SimpleElastix'>SimpleElastix</a> to perform the registration. One commit that is compatible with our code is  8244e0001f4137514b0f545f1e846910b3dd7769. The registration script <code>elastix_main.py</code> can be found here in SimVascular&#39;s source code: Python/site-packages/sv_auto_lv_modeling/modeling/elastix_main.py</p>
+<pre><code class='language-shell' lang='shell'># Use SimpleElastix to register surface meshes
+
+data_path=/path/to/data
+sv_python_dir=/usr/local/bin
+script_dir=SimVascular/Python/site-packages/sv_auto_lv_modeling
+
+# Path to the ct/mr images or segmentation results
+p_id=WS01
+image_dir=$data_path/01-Images/$p_id
+mask_dir=$data_path/02-Segmnts/$p_id
+# Path to the unregistered surface mesh
+surface_dir=$data_path/03-Surfaces/$p_id
+# Path to the registered surface meshes
+output_dir=$data_path/04-SurfReg/$p_id
+
+# Phase ID of the surface mesh used as the registration source
+start_phase=0
+
+# Registration with SimpleElastix
+python $script_dir/modeling/elastix_main.py \
+    --image_dir $mask_dir \
+    --mask_dir $mask_dir \
+    --output_dir $output_dir \
+    --start_phase $start_phase \
+    --surface_dir $surface_dir \
+    --image_file_extension vti \
+    --edge_size 3.5
+</code></pre>
+
+<p>&nbsp;</p>
+<h2 id='compute-mesh-motion-from-registered-meshes'>Compute Mesh Motion from Registered Meshes</h2>
+<p>Once we have registered meshes, we can then compute the displacement on each mesh vertex over the whole cardiac cycle. As the temporal resolution of time-series image data is usually not high enough for CFD simulations, we can apply cublic spline interpolation to the registered meshes to obtain finer and smooth mesh displacements. We provide a Python script to interpolate the meshes,  compute the mesh motion, and write out a  <code>.dat</code> file for each boundary face that can used in svFSI to set up the displacement boundary conditions. The interpolation script <code>interpolation.py</code> can be found here in SimVascular&#39;s source code: Python/site-packages/sv_auto_lv_modeling/modeling/svfsi/interpolation.py. </p>
+<pre><code class='language-shell' lang='shell'># Generate motion.dat File for svFSI
+data_path=/path/to/data
+sv_python_dir=/usr/local/bin
+script_dir=SimVascular/Python/site-packages/sv_auto_lv_modeling
+
+# Phase ID should be the same as the one used in volume_mesh.sh
+phase_id=0
+p_id=WS01
+
+# Path to the registered surface meshes
+input_dir=$data_path/04-SurfReg/$p_id
+# Path to the outputed volumetric meshes
+output_dir=$data_path/05-VolMesh/$p_id
+# Number of interpolations between adjacent phases
+num=99
+# Number of cardiac cycles
+cyc=1
+# Cycle duriation in seconds
+period=1.25
+
+# Write boundary conditions for FSI simulations
+python $script_dir/modeling/svfsi/interpolation.py \
+    --input_dir $input_dir \
+    --output_dir $output_dir \
+    --num_interpolation $num \
+    --num_cycle $cyc \
+    --duration $period \
+    --phase $phase_id
+</code></pre>
+<p><br>
+<br>
+<br>
+<br></p>
+</section>
+
+        </div>
+    </div>
+</div>
+
+
+    <!-- /.container -->
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid text-center">
+          <ul class="nav navbar-nav">
+            <li><a>Copyright &copy; SimVascular Development Team - 2017</a></li>
+          </ul>
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <script src="js/jquery-1.11.0.js" type="text/javascript"></script><script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+      $('body').scrollspy({
+        target: '.bs-docs-sidebar',
+        offset: 40
+      });
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-55333921-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+</body>
+
+</html>
