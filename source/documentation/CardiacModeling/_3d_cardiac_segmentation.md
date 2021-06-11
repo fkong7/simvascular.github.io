@@ -29,21 +29,22 @@ Our segmentation models were trained simultaneously on CT and MR data and traine
 To generate segmentations for 3D CT or MR image volumes, we can use SimVascular's Python Shell to run the prediction script. The SimVascular Python Shell can be invoked from the terminal according to the following instruction: http://simvascular.github.io/docsPythonInterface.html#python_shell. The prediction script `prediction.py` can be found here in SimVascular's source code: Python/site-packages/sv_auto_lv_modeling/segmentation/prediction.py
 
 ```bash
-patient_id=WS01 
-image_dir=01-Images
-output_dir=02-Segmnts
-weight_dir=./Weights 
-segmentation_script=segmentation/prediction.py
+data_path=/path/to/data
+sv_python_dir=/usr/local/bin
+script_dir=SimVascular/Python/site-packages/sv_auto_lv_modeling
 
-sv_python_dir=/usr/local/bin # Replace with the path to your SimVascular installation.
-${sv_python_dir}/simvascular --python \
-        -- ${segmentation_script} \
-        --pid patient_id \ # Patient ID.
-        --image image_dir \ # the images should be saved in proper format in a folder named as patient_id within image_dir. 
-        --output output_dir \
-        --model weight_dir \
-        --view 0 1 2 \ # Use models trained on axial (0), coronal (1) and/or sagittal (2) view[s].
-        --modality ct # Image modality, ct or mr.
+patient_id=WS01
+image_dir=$data_path/01-Images
+output_dir=$data_path/02-Segmnts
+weight_dir=$data_path/Weights
+
+${sv_python_dir}/simvascular --python -- $script_dir/segmentation/prediction.py \
+    --pid $patient_id \
+    --image $image_dir \
+    --output $output_dir \
+    --model $weight_dir \
+    --view  0 1 2 \ # 0 for axial, 1 for coronal, 2 for sagital
+    --modality ct # ct or mr
 ```
 A shell script (`Python/site-packages/sv_auto_lv_modeling/segmentation.sh`) is provided for ease of use. 
 
@@ -53,13 +54,14 @@ We can also use the Python console in SimVascular GUI to run the prediction scri
 
 ```Python
 from auto_lv.auto_lv import Segmentation
+data_path='/path/to/data'
 seg = Segmentation()
 seg.set_modality('ct')
 seg.set_patient_id ('WS01')
-seg.set_image_directory ('01-Images')
-seg.set_output_directory ('02-Segmnts')
-seg.set_model_directory (['Weights'])
-seg.set_view ([0,1,2])
+seg.set_image_directory (data_path+'/01-Images')
+seg.set_output_directory (data_path+'/02-Segmnts')
+seg.set_model_directory ([data_path+'/Weights'])
+seg.set_view ([2])
 seg.generate_segmentation()
 ```
 
